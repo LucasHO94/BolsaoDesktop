@@ -355,9 +355,9 @@ class App(bs.Window):
             val_12x_normal = saldo_restante_normal / 12
 
             # --- CÁLCULOS PÁGINA 1: CONDIÇÃO ESPECIAL (HOJE) ---
-            # Regra: Desconto da bolsa + 5% extra
+            # Regra: Seguir o percentual obtido sem +5%
             
-            pct_especial_hoje = pct_bolsa + 0.05
+            pct_especial_hoje = pct_bolsa
             if pct_especial_hoje > 1.0: 
                 pct_especial_hoje = 1.0
             
@@ -377,12 +377,11 @@ class App(bs.Window):
             # --- CRIAÇÃO DO TEXTO DINÂMICO PARA O CABEÇALHO ---
             base_int = int(round(pct_bolsa * 100))
             total_int = int(round(pct_especial_hoje * 100))
-            # Formato: "Condições de hoje 66% (61% + 5%)"
-            texto_condicao = f"Condições de hoje {total_int}% ({base_int}% + 5%)"
+            texto_condicao = f"Condições de hoje {total_int}%"
 
             # --- CÁLCULOS PÁGINA 3: PROPOSTA ESPECIAL (GENÉRICA) ---
-            # Mantem a lógica de +5% para exibir os planos tradicionais na página 3
-            proposta_pct = pct_bolsa + 0.05
+            # Seguir a risca a bolsa, sem +5%
+            proposta_pct = pct_bolsa
             if proposta_pct > 1.0: proposta_pct = 1.0
             anuidade_proposta = precos["anuidade"] * (1 - proposta_pct)
             
