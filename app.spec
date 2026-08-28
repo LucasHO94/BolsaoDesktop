@@ -33,7 +33,10 @@ a = Analysis(
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
-    excludes=['scipy', 'nltk', 'torch', 'tensorflow', 'sklearn', 'scikit-learn', 'matplotlib', 'tensorboard'],
+    excludes=[
+        'torch', 'tensorflow', 'keras', 'sklearn', 'scipy', 'matplotlib', 
+        'cv2', 'torchaudio', 'torchvision', 'numpy.core._multiarray_tests'
+    ],
     win_no_prefer_redirects=False,
     win_private_assemblies=False,
     cipher=block_cipher,

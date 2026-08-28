@@ -33,7 +33,7 @@ class App(bs.Window):
         
         # --- DEFINIÇÃO CENTRAL DA VERSÃO ---
         # Alterar aqui atualiza para todo o sistema (Update, Título, ID)
-        self.APP_VERSION = "3.0.8"
+        self.APP_VERSION = "3.0.9"
         
         myappid = f'MatrizEducacao.GestorBolsao.Desktop.{self.APP_VERSION}' 
         ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
